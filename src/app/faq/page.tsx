@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
-import { CtaBanner } from "@/components/Sections";
 import { faqs, services } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -45,7 +44,6 @@ export default function FaqPage() {
         columns={2}
       />
 
-      <CtaBanner />
     </>
   );
 }

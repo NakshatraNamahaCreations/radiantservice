@@ -80,7 +80,7 @@ export default function ServicesCarousel({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(42rem 24rem at 92% -10%, rgba(29,60,107,.07), transparent 60%), radial-gradient(30rem 18rem at 2% 108%, rgba(195,154,69,.06), transparent 65%)",
+            "radial-gradient(42rem 24rem at 92% -10%, rgba(20,58,110,.07), transparent 60%), radial-gradient(30rem 18rem at 2% 108%, rgba(200,144,46,.06), transparent 65%)",
         }}
       />
 
@@ -97,10 +97,6 @@ export default function ServicesCarousel({
               <p className="mt-4 text-base leading-relaxed text-pretty text-ink-muted">
                 {body}
               </p>
-              <span
-                aria-hidden
-                className="mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300"
-              />
             </div>
 
             <div className="flex shrink-0 gap-3">
@@ -154,7 +150,7 @@ export default function ServicesCarousel({
                   className="absolute inset-0 transition-opacity duration-500"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(6,13,28,.94) 0%, rgba(6,13,28,.70) 38%, rgba(6,13,28,.30) 70%, rgba(6,13,28,.28) 100%)",
+                      "linear-gradient(to top, rgba(2,19,45,.94) 0%, rgba(2,19,45,.70) 38%, rgba(2,19,45,.30) 70%, rgba(2,19,45,.28) 100%)",
                   }}
                 />
                 <div
@@ -162,7 +158,7 @@ export default function ServicesCarousel({
                   className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(29,60,107,.96) 0%, rgba(12,30,60,.88) 55%, rgba(6,13,28,.72) 100%)",
+                      "linear-gradient(to top, rgba(20,58,110,.96) 0%, rgba(11,44,90,.88) 55%, rgba(2,19,45,.72) 100%)",
                   }}
                 />
 
@@ -170,7 +166,7 @@ export default function ServicesCarousel({
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                <span className="absolute top-5 right-5 rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-bold tracking-wide text-white uppercase ring-1 ring-white/20 backdrop-blur-sm">
+                <span className="absolute top-5 right-5 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-bold tracking-wide text-white uppercase ring-1 ring-white/20 backdrop-blur-sm">
                   {s.group}
                 </span>
 
@@ -208,7 +204,7 @@ function arrowClass(disabled: boolean) {
   return cn(
     "grid h-12 w-12 place-items-center rounded-full border transition-all duration-200",
     disabled
-      ? "cursor-not-allowed border-[#ece5d9] text-[#cbbfa9]"
+      ? "cursor-not-allowed border-[#ece3d1] text-[#cdbf9f]"
       : "border-brand-200 text-brand-600 hover:-translate-y-0.5 hover:border-brand-600 hover:bg-brand-600 hover:text-white hover:shadow-lg hover:shadow-brand-600/25"
   );
 }

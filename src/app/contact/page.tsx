@@ -3,8 +3,8 @@ import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import ConsultationForm from "@/components/ConsultationForm";
 import { Section } from "@/components/ui";
-import { Check, Clock, MapPin, Phone, Tax, WhatsApp } from "@/components/Icons";
-import { areas, assurances, faqs, site, workingHours } from "@/data/site";
+import { ArrowRight, Clock, MapPin, Phone, Tax, WhatsApp } from "@/components/Icons";
+import { faqs, site, workingHours } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -60,16 +60,16 @@ export default function ContactPage() {
                   rel={
                     c.href.startsWith("http") ? "noopener noreferrer" : undefined
                   }
-                  className="group flex items-start gap-4 rounded-2xl border border-[#ece5d9] bg-white p-5 shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-16px_rgba(29,60,107,.28)]"
+                  className="group flex items-start gap-4 rounded-2xl border border-[#ece3d1] bg-white p-5 shadow-[0_1px_2px_rgba(5,27,58,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-16px_rgba(20,58,110,.28)]"
                 >
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white group-hover:ring-brand-600">
                     {c.icon}
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-[11px] font-bold tracking-[0.14em] text-accent-600 uppercase">
+                    <span className="block text-[12px] font-bold tracking-[0.14em] text-accent-600 uppercase">
                       {c.label}
                     </span>
-                    <span className="mt-1 block text-[15px] font-semibold break-words">
+                    <span className="mt-1 block text-[16px] font-semibold break-words">
                       {c.value}
                     </span>
                     <span className="muted mt-1 block text-xs leading-relaxed">
@@ -80,7 +80,7 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="mt-6 rounded-2xl border border-[#ece5d9] bg-white p-5 shadow-[0_1px_2px_rgba(16,25,43,.04)]">
+            <div className="mt-6 rounded-2xl border border-[#ece3d1] bg-white p-5 shadow-[0_1px_2px_rgba(5,27,58,.04)]">
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
                 <div>
@@ -120,10 +120,10 @@ export default function ContactPage() {
                 <Tax className="h-5 w-5" />
               </span>
               <span className="min-w-0">
-                <span className="block text-[11px] font-bold tracking-[0.14em] text-accent-400 uppercase">
+                <span className="block text-[12px] font-bold tracking-[0.14em] text-accent-400 uppercase">
                   Firm profile
                 </span>
-                <span className="mt-1 block text-[15px] font-semibold text-white">
+                <span className="mt-1 block text-[16px] font-semibold text-white">
                   Download the 2026 firm profile
                 </span>
                 <span className="mt-1 block text-xs leading-relaxed text-brand-100">
@@ -132,22 +132,6 @@ export default function ContactPage() {
               </span>
             </a>
 
-            <div className="mt-6 rounded-2xl border border-[#ece5d9] bg-white p-5 shadow-[0_1px_2px_rgba(16,25,43,.04)]">
-              <h3 className="text-sm font-semibold">We are active in</h3>
-              <p className="muted mt-2.5 text-sm leading-relaxed">
-                {areas.join(", ")}.
-              </p>
-              <ul className="mt-4 space-y-2.5 border-t pt-4">
-                {assurances.map((a) => (
-                  <li key={a} className="flex items-center gap-2.5 text-sm">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-accent-500/15 text-accent-600">
-                      <Check className="h-2.5 w-2.5" />
-                    </span>
-                    <span className="muted">{a}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
           <div>
@@ -164,6 +148,41 @@ export default function ContactPage() {
           </div>
         </div>
       </Section>
+
+      <section className="bg-white pb-16 sm:pb-24">
+        <div className="container-x">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight text-ink">
+                Find our office
+              </h2>
+              <p className="muted mt-2 flex items-start gap-2 text-sm leading-relaxed">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+                {site.address}
+              </p>
+            </div>
+            <a
+              href={site.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-800"
+            >
+              Open in Google Maps
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[#ece3d1] shadow-[0_1px_2px_rgba(5,27,58,.04)]">
+            <iframe
+              src={site.mapEmbedUrl}
+              title={`Map showing ${site.name}`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="block h-[22rem] w-full border-0 sm:h-[28rem]"
+            />
+          </div>
+        </div>
+      </section>
 
       <Faq items={faqs} alt />
     </>

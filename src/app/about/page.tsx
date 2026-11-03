@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import { CtaBanner, Leadership } from "@/components/Sections";
+import { Leadership } from "@/components/Sections";
 import FirmAtAGlance from "@/components/FirmAtAGlance";
 import { Section, SectionHeading } from "@/components/ui";
 import { Check, Shield } from "@/components/Icons";
+import CountUp from "@/components/CountUp";
 import { aboutIntro, assurances, highlights, site, stats } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -77,7 +78,7 @@ export default function AboutPage() {
             {stats.map((s) => (
               <div key={s.label} className="surface rounded-2xl p-6 text-center">
                 <div className="text-3xl font-bold text-brand-600">
-                  {s.value}
+                  <CountUp value={s.value} />
                 </div>
                 <div className="muted mt-1.5 text-xs">{s.label}</div>
               </div>
@@ -127,7 +128,6 @@ export default function AboutPage() {
 
       <FirmAtAGlance />
       <Leadership />
-      <CtaBanner />
     </>
   );
 }

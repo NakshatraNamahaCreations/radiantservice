@@ -122,6 +122,32 @@ export function WhatsApp(props: IconProps) {
   );
 }
 
+export function LinkedIn(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h3.96V21H3V9.75Zm6.46 0h3.8v1.54h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.74 2.64 4.74 6.06V21h-3.95v-5.06c0-1.2-.02-2.76-1.68-2.76-1.69 0-1.95 1.32-1.95 2.67V21H9.46V9.75Z" />
+    </svg>
+  );
+}
+
+export function Instagram(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" />
+      <circle cx="12" cy="12" r="4.1" />
+      <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function Facebook(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M13.5 21.5v-8.2h2.75l.42-3.2H13.5V8.06c0-.92.26-1.55 1.58-1.55h1.69V3.64a22.6 22.6 0 0 0-2.46-.13c-2.44 0-4.11 1.49-4.11 4.22v2.36H7.45v3.2h2.75v8.2h3.3Z" />
+    </svg>
+  );
+}
+
 export function Check(props: IconProps) {
   return (
     <svg {...base} strokeWidth={2} {...props}>

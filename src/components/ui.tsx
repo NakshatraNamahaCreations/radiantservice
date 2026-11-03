@@ -10,11 +10,11 @@ const buttonBase =
 
 const variants = {
   primary:
-    "bg-brand-600 text-white hover:bg-brand-700 shadow-lg shadow-brand-600/25 hover:shadow-brand-600/35 hover:-translate-y-0.5",
+    "bg-gradient-to-br from-brand-600 to-brand-800 text-white ring-1 ring-inset ring-white/10 shadow-lg shadow-brand-800/25 hover:from-brand-700 hover:to-brand-900 hover:shadow-brand-800/40 hover:-translate-y-0.5",
   accent:
-    "bg-accent-500 text-ink hover:bg-accent-400 shadow-lg shadow-accent-500/25 hover:-translate-y-0.5",
+    "bg-gold text-brand-900 shadow-lg shadow-accent-600/30 hover:brightness-105 hover:-translate-y-0.5",
   outline:
-    "border border-[var(--line)] hover:border-brand-500 hover:text-brand-600 bg-transparent",
+    "border border-[var(--line)] hover:border-accent-500 hover:text-brand-700 bg-transparent",
   white:
     "bg-white text-brand-700 hover:bg-white/92 shadow-lg shadow-black/25 hover:-translate-y-0.5",
   ghost: "hover:bg-[var(--bg-2)]",
@@ -42,7 +42,7 @@ export function ButtonLink({
   ...rest
 }: ButtonProps & { href: string } & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const classes = cn(buttonBase, variants[variant], sizes[size], className);
-  const isExternal = /^(https?:|tel:|mailto:)/.test(href);
+  const isExternal = /^(https?:|tel:|mailto:|#)/.test(href);
 
   if (isExternal) {
     return (
@@ -129,13 +129,6 @@ export function SectionHeading({
       <h2 className="mt-4 text-3xl leading-[1.14] font-bold tracking-tight text-balance text-ink sm:text-[2.4rem]">
         {title}
       </h2>
-      <span
-        aria-hidden
-        className={cn(
-          "mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300",
-          center && "mx-auto"
-        )}
-      />
       {body ? (
         <p className="mt-6 text-base leading-relaxed text-pretty text-ink-muted">
           {body}

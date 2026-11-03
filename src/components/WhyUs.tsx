@@ -15,7 +15,7 @@ export default function WhyUs() {
         className="absolute inset-0 -z-20"
         style={{
           background:
-            "linear-gradient(135deg, #00163b 0%, #0c1e3c 50%, #1d3c6b 100%)",
+            "linear-gradient(135deg, #021a3d 0%, #052350 50%, #143a6e 100%)",
         }}
       />
       <div
@@ -23,7 +23,7 @@ export default function WhyUs() {
         className="absolute inset-0 -z-20"
         style={{
           background:
-            "radial-gradient(48rem 28rem at 82% 6%, rgba(195,154,69,.20), transparent 62%), radial-gradient(34rem 20rem at 0% 100%, rgba(54,86,136,.42), transparent 66%)",
+            "radial-gradient(48rem 28rem at 82% 6%, rgba(200,144,46,.20), transparent 62%), radial-gradient(34rem 20rem at 0% 100%, rgba(47,79,133,.42), transparent 66%)",
         }}
       />
       <div
@@ -45,10 +45,6 @@ export default function WhyUs() {
             <h2 className="mt-4 text-3xl leading-[1.12] font-bold tracking-tight text-balance text-white sm:text-[2.5rem]">
               Depth where it counts
             </h2>
-            <span
-              aria-hidden
-              className="mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-300 via-accent-400 to-accent-200"
-            />
             <p className="mt-6 text-base leading-relaxed text-pretty text-white/70">
               Six reasons mid-market and promoter-led businesses move their tax
               and compliance function to us, and stay.

@@ -55,7 +55,7 @@ export default function ProcessSteps() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(40rem 22rem at 50% -8%, rgba(29,60,107,.08), transparent 62%), radial-gradient(28rem 18rem at 100% 100%, rgba(195,154,69,.05), transparent 65%)",
+            "radial-gradient(40rem 22rem at 50% -8%, rgba(20,58,110,.08), transparent 62%), radial-gradient(28rem 18rem at 100% 100%, rgba(200,144,46,.05), transparent 65%)",
         }}
       />
 
@@ -77,17 +77,13 @@ export default function ProcessSteps() {
             A clear, four-stage process that takes you from first consultation to
             continuous oversight.
           </p>
-          <span
-            aria-hidden
-            className="mx-auto mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300"
-          />
         </div>
 
         <ol className="relative mt-20 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {/* Continuous rail: sits behind the badges, fully visible above the cards */}
           <span
             aria-hidden
-            className="absolute top-10 right-[12.5%] left-[12.5%] hidden h-[3px] rounded-full bg-[#e4dbcb] lg:block"
+            className="absolute top-10 right-[12.5%] left-[12.5%] hidden h-[3px] rounded-full bg-[#e6dcc8] lg:block"
           />
           <span
             aria-hidden
@@ -134,29 +130,13 @@ export default function ProcessSteps() {
               </span>
 
               {/* Card */}
-              <div className="mt-8 flex h-full w-full flex-col rounded-2xl border border-[#ece5d9] bg-white p-6 text-center shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-brand-200 group-hover:shadow-[0_20px_44px_-14px_rgba(29,60,107,.26)]">
-                <span className="text-[11px] font-bold tracking-[0.16em] text-accent-600 uppercase">
+              <div className="mt-6 flex h-full w-full flex-col rounded-2xl border border-[#ece3d1] bg-white px-4 py-4 text-center shadow-[0_1px_2px_rgba(5,27,58,.04)] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-brand-200 group-hover:shadow-[0_20px_44px_-14px_rgba(20,58,110,.26)]">
+                <span className="text-[12px] font-bold tracking-[0.16em] text-accent-600 uppercase">
                   {step.label}
                 </span>
-                <h3 className="mt-2.5 text-base leading-snug font-semibold text-balance text-ink">
+                <h3 className="mt-2.5 flex-1 text-base leading-snug font-semibold text-balance text-ink">
                   {step.title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
-                  {step.body}
-                </p>
-
-                {/* Stage progress */}
-                <span aria-hidden className="mx-auto mt-6 flex gap-1.5 pt-1">
-                  {steps.map((_, d) => (
-                    <span
-                      key={d}
-                      className={cn(
-                        "h-1 rounded-full transition-all duration-500",
-                        d <= i ? "w-6 bg-brand-600" : "w-2 bg-[#e2d9c9]"
-                      )}
-                    />
-                  ))}
-                </span>
               </div>
             </li>
           ))}

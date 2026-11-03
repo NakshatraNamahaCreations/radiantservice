@@ -46,13 +46,6 @@ export default function Faq({
       <h2 className="mt-4 text-3xl leading-[1.12] font-bold tracking-tight text-balance text-ink sm:text-[2.5rem]">
         {title}
       </h2>
-      <span
-        aria-hidden
-        className={cn(
-          "mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300",
-          twoUp && "mx-auto"
-        )}
-      />
       {body ? (
         <p className="mt-6 text-base leading-relaxed text-pretty text-ink-muted">
           {body}
@@ -72,8 +65,8 @@ export default function Faq({
             className={cn(
               "overflow-hidden rounded-2xl border bg-white transition-all duration-300",
               isOpen
-                ? "border-brand-200 shadow-[0_18px_40px_-16px_rgba(29,60,107,.25)]"
-                : "border-[#ece5d9] hover:border-brand-200 hover:shadow-[0_10px_24px_-14px_rgba(29,60,107,.2)]"
+                ? "border-brand-200 shadow-[0_18px_40px_-16px_rgba(20,58,110,.25)]"
+                : "border-[#ece3d1] hover:border-brand-200 hover:shadow-[0_10px_24px_-14px_rgba(20,58,110,.2)]"
             )}
           >
             <h3>
@@ -96,7 +89,7 @@ export default function Faq({
 
                 <span
                   className={cn(
-                    "flex-1 text-[15px] leading-snug font-semibold transition-colors duration-300 sm:text-base",
+                    "flex-1 text-[16px] leading-snug font-semibold transition-colors duration-300 sm:text-base",
                     isOpen ? "text-brand-700" : "text-ink"
                   )}
                 >
@@ -155,7 +148,7 @@ export default function Faq({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(38rem 22rem at 0% 0%, rgba(29,60,107,.06), transparent 62%), radial-gradient(28rem 18rem at 100% 100%, rgba(195,154,69,.05), transparent 65%)",
+            "radial-gradient(38rem 22rem at 0% 0%, rgba(20,58,110,.06), transparent 62%), radial-gradient(28rem 18rem at 100% 100%, rgba(200,144,46,.05), transparent 65%)",
         }}
       />
 

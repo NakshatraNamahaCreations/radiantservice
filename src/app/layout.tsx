@@ -1,10 +1,22 @@
 import type { Metadata, Viewport } from "next";
+import { Poppins } from "next/font/google";
 import Header from "@/components/Header";
+import TopBar from "@/components/TopBar";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
+import ConsultationModal from "@/components/ConsultationModal";
 import BackToTop from "@/components/BackToTop";
 import { site } from "@/data/site";
 import "./globals.css";
+
+// Poppins for the whole site. next/font serves it from this site (no request
+// to Google from visitors' browsers) and avoids a flash of the fallback font.
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -43,7 +55,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#080c14" },
+    { media: "(prefers-color-scheme: dark)", color: "#021a3d" },
   ],
 };
 
@@ -77,7 +89,7 @@ export default function RootLayout({
     // managers, translators, dark-mode and grammar tools) cause by injecting
     // attributes before React hydrates. Real mismatches inside the app still
     // report normally.
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <a
           href="#main"
@@ -85,10 +97,12 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <TopBar />
         <Header />
         <main id="main">{children}</main>
         <Footer />
         <WhatsAppFab />
+        <ConsultationModal />
         <BackToTop />
         <script
           type="application/ld+json"

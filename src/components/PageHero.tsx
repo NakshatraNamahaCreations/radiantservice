@@ -19,7 +19,7 @@ export default function PageHero({
         className="absolute inset-0 -z-20"
         style={{
           background:
-            "linear-gradient(120deg, #00163b 0%, #0c1e3c 52%, #1d3c6b 100%)",
+            "linear-gradient(120deg, #021a3d 0%, #052350 52%, #143a6e 100%)",
         }}
       />
       <div
@@ -27,7 +27,7 @@ export default function PageHero({
         className="absolute inset-0 -z-20"
         style={{
           background:
-            "radial-gradient(44rem 22rem at 88% 0%, rgba(195,154,69,.20), transparent 62%), radial-gradient(30rem 18rem at 0% 100%, rgba(54,86,136,.45), transparent 68%)",
+            "radial-gradient(44rem 22rem at 88% 0%, rgba(200,144,46,.20), transparent 62%), radial-gradient(30rem 18rem at 0% 100%, rgba(47,79,133,.45), transparent 68%)",
         }}
       />
       <div
@@ -73,10 +73,6 @@ export default function PageHero({
           {title}
         </h1>
 
-        <span
-          aria-hidden
-          className="mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-300 via-accent-400 to-accent-200"
-        />
 
         {body ? (
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-white/75">

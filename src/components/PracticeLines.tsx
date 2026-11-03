@@ -32,7 +32,7 @@ export default function PracticeLines() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(42rem 24rem at 92% -10%, rgba(29,60,107,.07), transparent 60%), radial-gradient(30rem 18rem at 2% 108%, rgba(195,154,69,.06), transparent 65%)",
+            "radial-gradient(42rem 24rem at 92% -10%, rgba(20,58,110,.07), transparent 60%), radial-gradient(30rem 18rem at 2% 108%, rgba(200,144,46,.06), transparent 65%)",
         }}
       />
 
@@ -44,7 +44,7 @@ export default function PracticeLines() {
           return (
             <div key={line.key}>
               {/* Practice line header */}
-              <div className="flex flex-col gap-4 border-b border-[#ece5d9] pb-6 sm:flex-row sm:items-end sm:justify-between">
+              <div className="flex flex-col gap-4 border-b border-[#ece3d1] pb-6 sm:flex-row sm:items-end sm:justify-between">
                 <div className="max-w-2xl">
                   <span className="text-xs font-bold tracking-[0.18em] text-accent-600 uppercase">
                     {String(lineIndex + 1).padStart(2, "0")} &middot;{" "}
@@ -65,7 +65,7 @@ export default function PracticeLines() {
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
-                    className="group flex flex-col rounded-2xl border border-[#ece5d9] bg-white p-6 shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-16px_rgba(29,60,107,.28)]"
+                    className="group flex flex-col rounded-2xl border border-[#ece3d1] bg-white p-6 shadow-[0_1px_2px_rgba(5,27,58,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-16px_rgba(20,58,110,.28)]"
                   >
                     <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white group-hover:ring-brand-600">
                       <ServiceIcon name={s.icon} className="h-5 w-5" />
@@ -78,7 +78,7 @@ export default function PracticeLines() {
                       {s.short}
                     </p>
 
-                    <span className="mt-5 flex items-center gap-2 border-t border-[#f2ece1] pt-4 text-xs font-bold tracking-wider text-brand-600 uppercase">
+                    <span className="mt-5 flex items-center gap-2 border-t border-[#f3ecdf] pt-4 text-xs font-bold tracking-wider text-brand-600 uppercase">
                       Read more
                       <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>

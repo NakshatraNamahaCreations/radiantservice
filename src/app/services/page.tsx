@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import PracticeLines from "@/components/PracticeLines";
+import ServiceGroups from "@/components/ServiceGroups";
 import Faq from "@/components/Faq";
 import { CtaBanner } from "@/components/Sections";
 import { services } from "@/data/site";
@@ -30,7 +30,7 @@ export default function ServicesPage() {
           { href: "/services", label: "Our Services" },
         ]}
       />
-      <PracticeLines />
+      <ServiceGroups />
       <Faq
         items={serviceFaqs}
         eyebrow="Service questions"

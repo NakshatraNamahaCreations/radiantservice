@@ -1,14 +1,11 @@
 import Hero from "@/components/Hero";
-import ServicesCarousel from "@/components/ServicesCarousel";
+import ServiceLines from "@/components/ServiceLines";
 import Faq from "@/components/Faq";
 import {
   AboutPreview,
-  BlogPreview,
-  CaseStudies,
   CtaBanner,
   HowItWorks,
   ServiceAreas,
-  WhyUs,
   Testimonials,
 } from "@/components/Sections";
 import { faqs } from "@/data/site";
@@ -18,15 +15,12 @@ export default function HomePage() {
     <>
       <span id="top" aria-hidden />
       <Hero />
-      <ServicesCarousel />
       <AboutPreview />
       <HowItWorks />
-      <WhyUs />
-      <CaseStudies />
+      <ServiceLines />
       <Testimonials />
       <ServiceAreas />
       <Faq items={faqs} alt id="faq" />
-      <BlogPreview />
       <CtaBanner />
     </>
   );

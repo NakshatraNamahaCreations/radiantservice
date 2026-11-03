@@ -12,8 +12,9 @@ export default function ConsultationForm({
   variant = "surface",
 }: {
   defaultService?: string;
-  /** "glass" renders light-on-dark for use over the video banner. */
-  variant?: "surface" | "glass";
+  /** "glass" renders light-on-dark for use over the video banner; "plain"
+   *  drops the card around the form, for use inside the pop-up. */
+  variant?: "surface" | "glass" | "plain";
 }) {
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
@@ -67,7 +68,9 @@ export default function ConsultationForm({
 
   const shell = glass
     ? "rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-xl shadow-2xl shadow-black/40 sm:p-7"
-    : "surface rounded-2xl p-6 sm:p-8";
+    : variant === "plain"
+      ? ""
+      : "surface rounded-2xl p-6 sm:p-8";
 
   if (status === "done") {
     return (

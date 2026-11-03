@@ -45,13 +45,18 @@ export const site = {
   address:
     "Lodha Signet, 321, Kolshet Road, Thane (West), Mumbai 400 607",
   hours: "Monday - Saturday, 10 AM - 7 PM",
+  // Office location on Google Maps: the link opens it, the embed shows it on
+  // the Contact page.
+  mapUrl: "https://maps.app.goo.gl/VYa5cxnCjcmVS7SeA",
+  mapEmbedUrl:
+    "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s19.234348,72.988678!6i17!3m1!1sen!5m1!1sen",
   url: resolveSiteUrl(),
   // Social links are not shown anywhere on the site at the moment. Add real
   // profile URLs here and render them if you want icons back in the footer.
   social: {
     instagram: "",
     facebook: "",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/ca-amandeep-kaur-065313118",
   },
 } as const;
 
@@ -68,17 +73,81 @@ export const nav = [
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Our Services" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
+/** The "Our Services" dropdown in the header, the footer list, the home page
+ *  "What we do" cards and the Services page all use this list. Every link
+ *  opens its group on the Services page (/services#<id>). */
+export const serviceMenu = [
+  {
+    id: "gst",
+    title: "GST",
+    icon: "gst",
+    href: "/services#gst",
+    items: [
+      { label: "GST compliance", href: "/services#gst" },
+      { label: "Litigation", href: "/services#gst" },
+      { label: "Health check", href: "/services#gst" },
+      { label: "Registration", href: "/services#gst" },
+    ],
+  },
+  {
+    id: "virtual-cfo",
+    title: "Virtual CFO",
+    icon: "cfo",
+    href: "/services#virtual-cfo",
+    items: [
+      { label: "Health check", href: "/services#virtual-cfo" },
+      { label: "Strategic decision making", href: "/services#virtual-cfo" },
+      { label: "Financial planning", href: "/services#virtual-cfo" },
+      { label: "Mergers & Acquisitions", href: "/services#virtual-cfo" },
+      { label: "ERP optimisation", href: "/services#virtual-cfo" },
+      { label: "Budgeting", href: "/services#virtual-cfo" },
+      { label: "MIS", href: "/services#virtual-cfo" },
+    ],
+  },
+  {
+    id: "direct-tax",
+    title: "Direct Tax",
+    icon: "tax",
+    href: "/services#direct-tax",
+    items: [
+      { label: "Compliance / returns", href: "/services#direct-tax" },
+      { label: "Litigation", href: "/services#direct-tax" },
+      { label: "Tax planning", href: "/services#direct-tax" },
+      { label: "Tax optimisation", href: "/services#direct-tax" },
+    ],
+  },
+  {
+    id: "mca",
+    title: "MCA",
+    icon: "formation",
+    href: "/services#mca",
+    items: [
+      { label: "Company formation", href: "/services#mca" },
+      { label: "Planning", href: "/services#mca" },
+      { label: "Annual returns", href: "/services#mca" },
+    ],
+  },
+  {
+    id: "other",
+    title: "Other",
+    icon: "audit",
+    href: "/services#other",
+    items: [
+      { label: "Stock take", href: "/services#other" },
+      { label: "Certifications (Net worth)", href: "/services#other" },
+      { label: "Cashflow optimisation", href: "/services#other" },
+      { label: "Peer reviews / Benchmarking", href: "/services#other" },
+    ],
+  },
+];
+
 export const workingHours = [
-  { day: "Monday", time: "10 am - 7 pm" },
-  { day: "Tuesday", time: "10 am - 7 pm" },
-  { day: "Wednesday", time: "10 am - 7 pm" },
-  { day: "Thursday", time: "10 am - 7 pm" },
-  { day: "Friday", time: "10 am - 7 pm" },
-  { day: "Saturday", time: "10 am - 7 pm" },
+  { day: "Monday - Saturday", time: "10 am - 7 pm" },
   { day: "Sunday", time: "Closed" },
 ];
 
@@ -393,6 +462,8 @@ export const founders = [
   },
   {
     name: "CA Amandeep Kaur",
+    /** Gold label shown on her card on the About page. */
+    badge: "Founder",
     role: "Partner · Virtual CFO, Reporting & Assurance",
     photo: "/media/team/amandeep-kaur-card.jpg",
     photoIsCard: true,
@@ -487,7 +558,7 @@ export const stats = [
   { value: "18+", label: "Years of partner experience" },
   { value: "17", label: "Professionals across three verticals" },
   { value: "290+", label: "Assessees in a filing season" },
-  { value: "₹2,500 cr+", label: "Client turnover served" },
+  { value: "₹4,500 cr+", label: "Client turnover served" },
 ];
 
 export const aboutIntro =
@@ -647,13 +718,18 @@ export const posts = [
   },
 ];
 
+/** Gallery page photos. `size` picks the tile shape: "wide" spans two
+ *  columns, "tall" spans two rows. These are stock photos for now - swap in
+ *  real photos of the office and team by changing `image`. */
 export const gallery = [
-  { title: "Client advisory session", category: "Consultation" },
-  { title: "Audit and documentation review", category: "CA & Audit" },
-  { title: "Monthly MIS walkthrough", category: "Virtual CFO" },
-  { title: "GST reconciliation desk", category: "Tax & GST" },
-  { title: "Compliance calendar planning", category: "Compliance" },
-  { title: "Legal drafting review", category: "Legal" },
-  { title: "Team strategy meeting", category: "Team" },
-  { title: "Office at Lodha Signet, Thane", category: "Workplace" },
+  { image: "/media/team.jpg", title: "Client advisory session", category: "Advisory", size: "wide" },
+  { image: "/media/blog/gst-filing.jpg", title: "GST return preparation", category: "Tax & GST", size: "normal" },
+  { image: "/media/services/virtual-cfo-services.jpg", title: "Monthly MIS dashboards", category: "Virtual CFO", size: "tall" },
+  { image: "/media/blog/strategic-planning.jpg", title: "Team strategy meeting", category: "Team", size: "wide" },
+  { image: "/media/services/legal-drafting-documentation.jpg", title: "Legal drafting review", category: "Audit & Legal", size: "tall" },
+  { image: "/media/cases/cashflow-stability.jpg", title: "Cash flow planning", category: "Virtual CFO", size: "normal" },
+  { image: "/media/cases/simplified-filings.jpg", title: "Income tax filing", category: "Tax & GST", size: "normal" },
+  { image: "/media/cta.jpg", title: "Working papers review", category: "Audit & Legal", size: "wide" },
+  { image: "/media/blog/virtual-cfo.jpg", title: "Engagement sign-off", category: "Advisory", size: "normal" },
+  { image: "/media/services/statutory-compliance-management.jpg", title: "Our workspace", category: "Team", size: "tall" },
 ];

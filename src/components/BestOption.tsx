@@ -43,7 +43,7 @@ export default function BestOption() {
           <ul className="mt-6 grid gap-4 sm:grid-cols-3 lg:absolute lg:bottom-8 lg:left-0 lg:mt-0 lg:w-[62%]">
             {testimonials.map((t) => (
               <li key={t.name}>
-                <figure className="flex h-full flex-col rounded-xl bg-white p-5 shadow-[0_14px_34px_-14px_rgba(29,60,107,.30)] ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-14px_rgba(29,60,107,.38)]">
+                <figure className="flex h-full flex-col rounded-xl bg-white p-5 shadow-[0_14px_34px_-14px_rgba(20,58,110,.30)] ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-14px_rgba(20,58,110,.38)]">
                   <div className="flex items-center justify-between gap-2">
                     <span
                       aria-hidden
@@ -64,11 +64,11 @@ export default function BestOption() {
                     </p>
                   </blockquote>
 
-                  <figcaption className="mt-4 border-t border-[#f2ece1] pt-3">
-                    <div className="text-[15px] leading-snug font-bold text-ink">
+                  <figcaption className="mt-4 border-t border-[#f3ecdf] pt-3">
+                    <div className="text-[16px] leading-snug font-bold text-ink">
                       {t.name}
                     </div>
-                    <div className="mt-0.5 text-[10px] font-bold tracking-[0.12em] text-accent-600 uppercase">
+                    <div className="mt-0.5 text-[11px] font-bold tracking-[0.12em] text-accent-600 uppercase">
                       {t.role}
                     </div>
                   </figcaption>

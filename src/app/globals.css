@@ -1,36 +1,45 @@
 @import "tailwindcss";
 
 @theme {
-  /* Navy from the Apex Radiant wordmark (#00163B) */
-  --color-brand-50: #f3f6fa;
-  --color-brand-100: #e3eaf4;
-  --color-brand-200: #c6d3e6;
-  --color-brand-300: #9aaecb;
-  --color-brand-400: #6280ab;
-  --color-brand-500: #365688;
-  --color-brand-600: #1d3c6b;
-  --color-brand-700: #142c52;
-  --color-brand-800: #0c1e3c;
-  --color-brand-900: #00163b;
+  /* Body text sizes, each a step up from Tailwind's defaults so the whole
+     site reads a little larger. Headings use their own explicit sizes. */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.3125rem;
 
-  /* Gold from the eagle mark and "APEX" (#B38743 / #F8C462) */
-  --color-accent-50: #fdf9f0;
-  --color-accent-100: #f8eed8;
-  --color-accent-200: #f3e2ba;
-  --color-accent-300: #ecd6a4;
-  --color-accent-400: #dcbb6f;
-  --color-accent-500: #c39a45;
-  --color-accent-600: #a3792c;
-  --color-accent-700: #82601f;
+  /* Navy sampled from "RADIANT" in the logo (#00244E) */
+  --color-brand-50: #f2f5fa;
+  --color-brand-100: #e1e8f3;
+  --color-brand-200: #c3d0e6;
+  --color-brand-300: #93a9cd;
+  --color-brand-400: #5b78aa;
+  --color-brand-500: #2f4f85;
+  --color-brand-600: #143a6e;
+  --color-brand-700: #0b2c5a;
+  --color-brand-800: #052350;
+  --color-brand-900: #021a3d;
 
-  --color-ink: #10192b;
-  --color-ink-muted: #5d6478;
+  /* Metallic gold sampled from the logo: "APEX" (#A8731A) through to the
+     light wing gold (#F8C76A) */
+  --color-accent-50: #fdf8ec;
+  --color-accent-100: #f9edcf;
+  --color-accent-200: #f4dda2;
+  --color-accent-300: #f0cb78;
+  --color-accent-400: #e2b04f;
+  --color-accent-500: #c8902e;
+  --color-accent-600: #a8731a;
+  --color-accent-700: #845914;
+
+  --color-ink: #0d1b33;
+  --color-ink-muted: #5a6478;
   --color-surface: #ffffff;
-  --color-surface-2: #faf4ea;
-  --color-line: #ebe3d6;
+  --color-surface-2: #fbf7ef;
+  --color-line: #ece3d1;
 
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --radius-xl2: 1.25rem;
 
@@ -61,10 +70,10 @@
 
 :root {
   --bg: #ffffff;
-  --bg-2: #faf4ea;
-  --fg: #10192b;
-  --fg-muted: #5d6478;
-  --line: #ebe3d6;
+  --bg-2: #fbf7ef;
+  --fg: #0d1b33;
+  --fg-muted: #5a6478;
+  --line: #ece3d1;
   --card: #ffffff;
   color-scheme: light;
 }
@@ -117,15 +126,45 @@
 }
 
 ::selection {
-  background-color: var(--color-brand-500);
-  color: #fff;
+  background-color: var(--color-accent-300);
+  color: var(--color-brand-900);
 }
 
+/* Metallic gold from the logo, for highlighted words and fine rules. */
+@utility text-gold {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-accent-600) 0%,
+    var(--color-accent-400) 45%,
+    var(--color-accent-300) 60%,
+    var(--color-accent-600) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gold {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-accent-600) 0%,
+    var(--color-accent-400) 45%,
+    var(--color-accent-300) 60%,
+    var(--color-accent-600) 100%
+  );
+}
+
+/* Page width, matched to the header so content lines up with the logo and
+   the menu, with only a slim margin at the left and right. */
 @utility container-x {
   margin-inline: auto;
   width: 100%;
-  max-width: 76rem;
-  padding-inline: 1.25rem;
+  max-width: 90rem;
+  padding-inline: 1rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
 }
 
 @utility surface {

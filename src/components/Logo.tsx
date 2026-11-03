@@ -32,8 +32,8 @@ export default function Logo({
           src={logo}
           alt="Apex Radiant Consultant LLP - Chartered Accountants, Tax Consultants, Virtual CFO"
           priority
-          sizes="(min-width: 640px) 300px, 210px"
-          className="h-12 w-auto object-contain sm:h-16"
+          sizes="(min-width: 640px) 375px, 245px"
+          className="h-14 w-auto object-contain sm:h-20"
         />
       </span>
     </Link>
